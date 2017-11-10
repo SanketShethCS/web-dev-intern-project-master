@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+  <script src="jquery.js"></script>
+
+  <script>
+	var current=1;
+	var flag =0;
+	function flip(){
+		var elem = document.getElementById("numberImg1");
+		if (flag == 0){
+		elem.style.backgroundImage = "url('images/numbersheet2.png')";
+		flag=1;
+		}else{
+		flag=0;
+		elem.style.backgroundImage = "url('images/numbersheet.png')";
+		}
+	}
+	function changes(num)
+	{
+	var elem = document.getElementById("numberImg1");
+	if (num == 1)
+	{	
+		$(  '#description'  ).load( 'first.html', function () {
+			window.alert('Request complete');
+			})
+		elem.style.backgroundPosition = "0px 0px";
+		current=1;
+	}
+	if (num == 2)
+	{
+		elem.style.backgroundPosition = "-160px 0px";
+		current=2;
+	}
+	if (num == 3)
+	{	
+		elem.style.backgroundPosition = "-320px 0px";
+		current=3;
+		
+	}
+	if (num == 4)
+	{
+		elem.style.backgroundPosition = "0px 200px";
+		current=4;
+	}
+	if (num == 5)
+	{	
+
+		elem.style.backgroundPosition = "-160px 200px";
+		current=5;
+	}
+	if (num == 6)
+	{	
+		current=6;
+		elem.style.backgroundPosition = "-320px 200px";
+	}
+	}
+	function increment(i){
+		if(current == 6 && i==1){
+			current=0
+		}
+		if(current == 1 && i==-1){
+			current=7
+		}
+		current=current+i
+		changes(current)
+	}
+	</script>
+    <meta charset="utf-8">
+    <title>Priority Thinking Web Developer Intern Work Sample</title>
+    <style>
+		#container {
+			width: 260px;
+		}
+		.button {
+			margin: 5px;
+			background-color: black;
+			width: 80px;
+			height: 20px;
+			line-height: 20px;
+			color: white;
+			text-align: center;
+			cursor: pointer;
+		}
+		.switcher {
+			width: 33px;
+			display: inline-block;
+		}
+		#numberImg1 {
+			background-image: url(images/numbersheet.png);
+			background-position: -160px 0px;
+			width: 160px;
+			height: 200px;
+			border: 1px solid black;
+			float: right;
+		}
+	</style>
+  </head>
+  <body>
+	<div id="container">
+		<div id="numberImg1"></div>
+		<div class="button" onclick = "changes(1)">1</div>
+		<div class="button" onclick = "changes(2)">2</div>
+		<div class="button" onclick = "changes(3)">3</div>
+		<div class="button" onclick = "changes(4)">4</div>
+		<div class="button" onclick = "changes(5)">5</div>
+		<div class="button" onclick = "changes(6)">6</div>
+		<div class="button switcher" onclick = "increment(-1)">-</div>
+		<div class="button switcher" onclick = "increment(1)">+</div>
+		<div class="button" onclick = "flip()">Switch</div>
+	</div>
+	<div id="description">
+	<p>This is placeholder content!</p>
+	</div>
+  </body>
+</html>
