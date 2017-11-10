@@ -22,36 +22,38 @@
 	var elem = document.getElementById("numberImg1");
 	if (num == 1)
 	{	
-		$(  '#description'  ).load( 'first.html', function () {
-			window.alert('Request complete');
-			})
+		$(  '#description'  ).load( 'includes/first.html')
 		elem.style.backgroundPosition = "0px 0px";
 		current=1;
 	}
 	if (num == 2)
 	{
+		$(  '#description'  ).load( 'includes/second.html')
 		elem.style.backgroundPosition = "-160px 0px";
 		current=2;
 	}
 	if (num == 3)
 	{	
+		$(  '#description'  ).load( 'includes/third.html')
 		elem.style.backgroundPosition = "-320px 0px";
 		current=3;
 		
 	}
 	if (num == 4)
-	{
+	{	
+		$(  '#description'  ).load( 'includes/fourth.html')
 		elem.style.backgroundPosition = "0px 200px";
 		current=4;
 	}
 	if (num == 5)
 	{	
-
+		$(  '#description'  ).load( 'includes/fifth.html')
 		elem.style.backgroundPosition = "-160px 200px";
 		current=5;
 	}
 	if (num == 6)
 	{	
+		$(  '#description'  ).load( 'includes/sixth.html')
 		current=6;
 		elem.style.backgroundPosition = "-320px 200px";
 	}
