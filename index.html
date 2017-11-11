@@ -5,8 +5,9 @@
   <script src="jquery.js"></script>
 
   <script>
-	var current=1;
-	var flag =0;
+	var current=1; <!-- Counter for keeping track of the index of current Numbered image. -->
+	var flag =0; <!-- Flag for keeping track of the current spritesheet image. -->
+	<!-- This method flips the spritesheet image when called upon and reverses the flag . -->
 	function flip(){
 		var elem = document.getElementById("numberImg1");
 		if (flag == 0){
@@ -17,47 +18,49 @@
 		elem.style.backgroundImage = "url('images/numbersheet.png')";
 		}
 	}
+	<!-- This method changes the description and image based on id passed by the onclick function. -->
 	function changes(num)
 	{
 	var elem = document.getElementById("numberImg1");
 	if (num == 1)
 	{	
-		$(  '#description'  ).load( 'includes/first.html')
+		$(  '#description'  ).load( 'includes/first.html') <!-- Jquery to load description from respecive html page. -->
 		elem.style.backgroundPosition = "0px 0px";
 		current=1;
 	}
 	if (num == 2)
 	{
-		$(  '#description'  ).load( 'includes/second.html')
+		$(  '#description'  ).load( 'includes/second.html') <!-- Jquery to load description from respecive html page. -->
 		elem.style.backgroundPosition = "-160px 0px";
 		current=2;
 	}
 	if (num == 3)
 	{	
-		$(  '#description'  ).load( 'includes/third.html')
+		$(  '#description'  ).load( 'includes/third.html') <!-- Jquery to load description from respecive html page. -->
 		elem.style.backgroundPosition = "-320px 0px";
 		current=3;
 		
 	}
 	if (num == 4)
 	{	
-		$(  '#description'  ).load( 'includes/fourth.html')
+		$(  '#description'  ).load( 'includes/fourth.html') <!-- Jquery to load description from respecive html page. -->
 		elem.style.backgroundPosition = "0px 200px";
 		current=4;
 	}
 	if (num == 5)
 	{	
-		$(  '#description'  ).load( 'includes/fifth.html')
+		$(  '#description'  ).load( 'includes/fifth.html') <!-- Jquery to load description from respecive html page. -->
 		elem.style.backgroundPosition = "-160px 200px";
 		current=5;
 	}
 	if (num == 6)
 	{	
-		$(  '#description'  ).load( 'includes/sixth.html')
+		$(  '#description'  ).load( 'includes/sixth.html') <!-- Jquery to load description from respecive html page. -->
 		current=6;
 		elem.style.backgroundPosition = "-320px 200px";
 	}
 	}
+	<!-- This function increments or decrements the image and description id for switch button. -->
 	function increment(i){
 		if(current == 6 && i==1){
 			current=0
